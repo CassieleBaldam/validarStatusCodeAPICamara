@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231018 14:01:52.532" rpa="false" schemaversion="4">
+<suite id="s1" name="validarStatusCode" source="c:\Users\cassi\OneDrive\Área de Trabalho\api teste\src\test\validarStatusCode.robot">
+<test id="s1-t1" name="Validar status code Consulta os Blocos por ID" line="9">
+<kw name="Inciar teste">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>api_session</arg>
+<arg>https://dadosabertos.camara.leg.br/api/v2</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20231018 14:01:52.699" level="INFO">Creating Session using : alias=api_session, url=https://dadosabertos.camara.leg.br/api/v2, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231018 14:01:52.699" endtime="20231018 14:01:52.699"/>
+</kw>
+<status status="PASS" starttime="20231018 14:01:52.699" endtime="20231018 14:01:52.699"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>api_session</arg>
+<arg>/blocos/587</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20231018 14:01:53.061" level="INFO">GET Request : url=https://dadosabertos.camara.leg.br/api/v2/blocos/587 
+ path_url=/api/v2/blocos/587 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231018 14:01:53.078" level="INFO">GET Response : url=https://dadosabertos.camara.leg.br/api/v2/blocos/587 
+ status=200, reason= 
+ headers={'Date': 'Wed, 18 Oct 2023 17:01:53 GMT', 'Server': 'Apache', 'Content-Type': 'application/json;charset=UTF-8', 'access-control-expose-headers': 'Link, X-Total-Count, X-Validation-Error', 'retry-after': '30', 'Vary': 'Accept-Encoding,User-Agent', 'Content-Encoding': 'gzip', 'Content-Length': '173', 'Keep-Alive': 'timeout=1, max=5', 'Connection': 'Keep-Alive'} 
+ body={"dados":{"id":"587","uri":"https://dadosabertos.camara.leg.br/api/v2/blocos/587","nome":"MDB, PSD, REPUBLICANOS, PODE","idLegislatura":"57"},"links":[{"rel":"self","href":"https://dadosabertos.camara.leg.br/api/v2/blocos/587"}]} 
+ </msg>
+<msg timestamp="20231018 14:01:53.078" level="INFO">C:\Users\cassi\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dadosabertos.camara.leg.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20231018 14:01:53.082" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231018 14:01:52.699" endtime="20231018 14:01:53.082"/>
+</kw>
+<status status="PASS" starttime="20231018 14:01:52.697" endtime="20231018 14:01:53.084"/>
+</test>
+<status status="PASS" starttime="20231018 14:01:52.546" endtime="20231018 14:01:53.086"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="validarStatusCode">validarStatusCode</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
